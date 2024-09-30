@@ -1,0 +1,189 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff; /* Background color of the navbar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.355); /* Light shadow */
+  position: fixed;
+  width:100%;
+  z-index:1000;
+}
+
+.logo_container {
+  margin-left: 10%;
+}
+#logo_image {
+  width: 70px;
+}
+
+.navbar > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+  letter-spacing: 1;
+  font-weight: 600;
+  color: rgb(73, 72, 72);
+  list-style-type: none;
+  margin-right: 130px;
+}
+li {
+  padding: 15px 12px 12px 12px;
+  margin: 10px;
+  margin-left: 20pxx;
+  font-size: 16px;
+}
+.body{
+  border:1px solid white;
+  background-color: rgba(215, 215, 215, 0.166);
+}
+.search-filter{
+  display: flex;
+}
+.search {
+  width:45%;
+  margin: 95px 20px 0px 8%;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 20px;
+  
+}
+
+.button-container{
+  margin: 95px 10% 0px 10px;
+  width:50%;
+}
+.actual-button{
+  height:50px;
+  width:100%;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color:transparent;
+  cursor:pointer;
+}
+.body-container{
+  display:flex;
+  flex-wrap: wrap;
+  margin: 0px 7% auto;
+}
+.cards-box {
+  margin: 10px;
+  padding: 5px;
+
+}
+.cards {
+  border: 1px solid lightgrey;
+  border-radius: 20px;
+  width: 280px;
+  padding: 1px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards:hover {
+  transform: scale(0.98); /* Slightly enlarges the div when hovered */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow to give a pop-up effect */
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow:hidden;
+  height: 185.325px;
+  width: 280px;
+  border-radius: 15px;
+  position:relative;
+}
+
+.image-container > img {
+  position:absolute ;
+  top: -50px;
+  display: block;
+  object-fit:contain;
+  width: 100%; /* Adjust as necessary */
+  cursor: pointer;
+
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  font-family: ProximaNovaCond_Black;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%; /* Adjust height of the gradient */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  border-radius: 0px 0px 15px 15px;
+}
+
+.image-container .overlay-text {
+  position: absolute;
+  width: 100%;
+  top: 100%; /* Adjust for vertical positioning */
+  left: 50%; /* Adjust for horizontal positioning */
+  transform: translate(-60%, -100%); /* Center the text */
+  color: rgb(255, 255, 255);
+  font-size: 20px; 
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  z-index:1;
+}
+
+.card-data {
+  padding: 10px;
+}
+
+
+.res-name{
+  font-family: Gilroy_Bold;
+  font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    width: 100%;
+    white-space: nowrap;
+}
+
+.res-rating{
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.92);
+}
+
+.res-time{
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.92);
+}
+.res-items{
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 16px;
+  font-family: Gilroy;
+  color:#02060C99;
+
+}
+.res-location{
+  font-size: 16px;
+  font-family: Gilroy;
+  color:#02060C99;
+
+}
