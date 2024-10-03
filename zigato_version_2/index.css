@@ -28,7 +28,7 @@
   font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
   letter-spacing: 1;
   font-weight: 600;
-  color: rgb(73, 72, 72);
+  color: rgba(73, 72, 72, 0.958);
   list-style-type: none;
   margin-right: 130px;
 }
