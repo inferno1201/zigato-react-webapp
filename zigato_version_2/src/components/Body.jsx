@@ -2,8 +2,10 @@ import Cards from "./Card";
 import ShimmerUI from "./ShimmerUI";
 import { useState, useEffect } from "react";
 const Body = () => {
-  const [rest, setRest] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
+  const [rest, setRest] = useState([]);
+  const [filteredRest, setFilteredRest] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -18,20 +20,46 @@ const Body = () => {
     setRest(
       json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
     );
+    setFilteredRest(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
   };
 
-  return (rest.length===0)?<ShimmerUI></ShimmerUI>:(
+  return rest.length === 0 ? (
+    <ShimmerUI></ShimmerUI>
+  ) : (
     <div className="body">
       <div className="search-filter">
-        <div className="search"> search</div>
+        <div className="search">
+          <div className="search-container">
+            <input
+              className="input-field"
+              type="text"
+              placeholder="Search restaurant"
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
+            <button
+              className="search-button"
+              onClick={() => {
+                const searchedRest= rest.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                setFilteredRest(searchedRest);
+              }
+            }
+            >
+              Search
+            </button>
+          </div>
+        </div>
         <div className="button-container">
           <button
             className="actual-button"
             onClick={() => {
+              console.log("pressed")
               const newData = rest.filter(
                 (resInfo) => resInfo.info.avgRatingString > 4.5
               );
-              setRest(newData);
+              setFilteredRest(newData);
             }}
           >
             Get Top Rated Restaurants
@@ -40,7 +68,7 @@ const Body = () => {
       </div>
       <div className="body-container">
         {
-          rest.map((res) => {
+          filteredRest.map((res) => {
             return <Cards key={res.info.id} resData={res} />;
           }) // or {restaurant.map((index)=>(<Cards resData={index}>))}
         }

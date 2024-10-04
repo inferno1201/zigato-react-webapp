@@ -46,17 +46,39 @@ li {
   display: flex;
 }
 .search {
-  width:45%;
+  width:50%;
   margin: 95px 20px 0px 8%;
-  padding: 15px;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 20px;
-  
 }
+.search-container{
+  width:100%;
+  height:100%;
+}
+.input-field{
+  box-sizing:border-box;;
+  height:100%;
+  padding-left:15px;
+  width:79%;
+  border:none;
+  border-radius:20px;
+  margin-right:3px;
+ 
+}
+.search-button{
+  height:100%;
+  width:20%;
+  border:none;
+  border-radius:20px;
+  margin-right:0px;
+  background-color: rgba(240, 128, 128, 0.436);
+}
+
 
 .button-container{
   margin: 95px 10% 0px 10px;
   width:50%;
+
 }
 .actual-button{
   height:50px;
@@ -186,4 +208,8 @@ li {
   font-family: Gilroy;
   color:#02060C99;
 
+}
+
+.about{
+  padding:20%;
 }
